@@ -20,7 +20,7 @@ print(thislist[-1])
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[2:5])
 
-# ex 5 - This example returns the items from the beginning to, but NOT including, "kiw
+# ex 5 - This example returns the items from the beginning to, but NOT including, "kiwi"
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[:4])
 
@@ -111,3 +111,163 @@ del thislist
 thislist = ["apple", "banana", "cherry"]
 thislist.clear()
 print(thislist)
+
+# ---------------------List Loops---------------
+# ex 27 - print all items one by one
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+
+# ex 28 - loop through the index numbers
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+
+# ex 29 - loop using a while loop
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+# ex 31 - loop list using list comprehension (short hand for for-loop)
+# thislist = ["apple", "banana", "cherry"]
+# [print(x) for x in thislist]
+
+# ---------------------List Comprehension-----------------------
+
+# ex 32 - long syntax example (for reference)
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+
+print(newlist)
+
+
+# ex 33 - shortened with one line of code
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+print(newlist)
+
+# generic syntax: newlist = [expression for item in iterable if condition == True]
+
+# ex 34 - the condition is like a filter that only accepts the items that valuate to True
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if x != "apple"]
+print(newlist)
+
+# ex 35 - don't need a conditional statement
+newlist = [x for x in fruits]
+
+# ex 36 - You can use the range() function to create an iterable:
+newlist = [x for x in range(10)]
+
+# ex 37 - Accept only numbers lower than 5:
+newlist = [x for x in range(10) if x < 5]
+
+# ex 38 - Set the values in the new list to upper case:
+newlist = [x.upper() for x in fruits]
+
+# ex 39 - Set all values in the new list to 'hello':
+newlist = ['hello' for x in fruits]
+
+# ex 40 - Return "orange" instead of "banana": (replacing every instance)
+newlist = [x if x != "banana" else "orange" for x in fruits]
+
+# ----------------------- Sort Lists -----------------------
+
+# ex 41 - Sort the list alphabetically:
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+print(thislist)
+
+# ex 42 - Sort the list numerically:
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+print(thislist)
+
+# ex 43 - Sort the list descending: (alphabetically)
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+
+# ex 44 - Sort the list descending: (numeric)
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(reverse = True)
+print(thislist)
+
+# ex 45 - Sort the list based on how close the number is to 50: (custom sort function)
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+
+# ex 46 - Case sensitive sorting can give an unexpected result: (because of uppercase)
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+print(thislist)
+
+# ex 47 - Perform a case-insensitive sort of the list:
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower)
+print(thislist)
+
+# ex 48 - Reverse the order of the list items:
+#     (QUESTION- thought it should be "cherry", "banana", "Orange", "Kiwi"
+#     answer was "cherry", "Kiwi", "Orange", "banana"
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.reverse()
+print(thislist)
+
+# --------------------- Copy List -----------------------
+
+# without simply creating new list with same reference
+
+# ex 49 - Make a copy of a list with the copy() method:
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+# ex 50 - Make a copy of a list with the list() method:
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+
+# --------------------- Join Lists -----------------------
+# this section goes over how to concatenate lists using the "+" operator
+# ex 51 - Join two list:
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+
+# ex 52 - Append list2 into list1:
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+  list1.append(x)
+
+print(list1)
+
+# ex 53 - Use the extend() method to add list2 at the end of list1:
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+print(list1)
+
+# ex 54
+# ex 55
+# ex 56
+# ex 57
+# ex 58
+# ex 59
+
+
+
